@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+/*navbar*/
+.navbar-container {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #292928;
+}
+
+.navbar {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+}
+
+.navbar a {
+    color: white;
+}
+
+/*Frontpage*/
+.front-page-container {
+    display: flex;
+    height: 100vh;
+    background-image: url("./pexels-quintin-gellar-313782.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main {
+    display: flex;
+    margin: 10em auto;
+    height: 70%;
+    width: 70%;
+    overflow: hidden;
+
+}
+
+.info-card {
+    width: 50%;
+    background-color: #292928;
+    text-align: center;
+}
+
+.info-card h2 {
+    color: white;
+    margin-top: 3em;
+    font-size: 1.5rem;
+    color: white;
+
+}
+.info-card div {
+    margin: 3em;
+    text-align: center;
+}
+
+.info-card p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.info-card button {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    border: none;
+    background: none;
+    color: white;
+}
+
+.info-card button:hover{
+    color: #ed872d
+}
+
+/* Login/Register card */ 
+
+.sign-card {
+    width: 50%;
+    text-align: center;
+    background-color: white;
+}
+
+.sign-card h2 {
+    margin-top: 3em;
+    border: 0;
+    border-bottom: 1px solid #292928;
+
+}
+
+.sign-form {
+    margin: 5em auto;
+    width: 50%;
+}
+
+.sign-form div {
+    margin-top: 2em;
+}
+
+.sign-form label {
+    font-size: 1.2rem;
+    display: block;
+    text-align: left;
+}
+
+.sign-form input {
+    margin-top: 3%;
+    display: block;
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid #292928;
+    font-size: 20px;
+}
+
+::placeholder {
+    font-size: 15px;
+}
+
+.signform #sign-feedback {
+    text-align: left;
+
+}
+
+.sign-form button {
+    margin-top: 10%;
+    padding: 10px;
+    border-radius: 10px;
+    float: center;
+    font-size: 20px;
+    color: white;
+    background-color: #047aed
+}
+
+/* Loader */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #292928;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.home-page-container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar-container {
+    position: fixed;
+    margin: 50px auto;
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid #292928;
+}
+
+.sidebar-content {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+    background-color: #333333;
+    color: white;
+}
+
+.sidebar-content button {
+    border: 0;
+    background: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.header-container {
+    padding-top: 2em;
+    background-color: rgba(255, 105, 255, 0.3);
+    height: 15%;
+    color: white;
+}
+
+.header-user {
+    display: flex;
+}
+
+#user-icon {
+    font-size: 2rem;
+    margin-left: 0.5em;
+}
+
+.header-user h3 {
+    padding-left: 0.5em;
+}
+
+.header-budget {
+    margin-top: 2em;
+    margin-left: 0.5em;
+}
+
+.item {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    border-bottom: #292928 1px solid;
+}
+
+.item-icon {
+    width: 30%;
+    height: 100%;
+    text-align: center;
+}
+
+.sidebar-icon {
+    margin: auto;
+    height: 100%;
+    font-size: 1.5rem;
+}
+
+.item-content {
+    width: 70%;
+    height: 100%;
+    text-align: center;
+}
+
+.item-content button:hover {
+    text-decoration: underline;
+    color: #ed872d
+}
+
+.progressbar-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+}
+
+.progressbar {
+    width: 50%;
+    margin: auto;
+}
+
+.list-container {
+    margin: 100px auto;
+    width: 70%;
+    height: 100vh;
+}
+
+.inner-container {
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 1em 1em 1em 1em;
+}
+
+.inner-container h1 {
+    margin-top: 1em;
+}
+
+.list-item {
+   padding-top: 1em;
+   border-bottom: #333 2px;
+
+}
+
+.inner-container div {
+    margin: auto;
+    width: 80%;
+    height: 70%;
+    overflow: auto;
+    border-bottom: #333 1px solid;
+}
+
+.review-table {
+    margin: 1em auto;
+    width: 100%;
+}
+
+.review-table th {
+    font-size: 1.5rem;
+}
+
+.review-table td {
+    padding: 0.5em;
+}
+
+.review-results {
+    margin-top: 1em auto;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 80%;
+}
+
+.modal-form {
+    text-align: center;
+    color: white;
+}
+
+.modal-form div {
+    margin-top: 2em;
+
+}
+
+.modal-form label {
+    font-size: 1.2rem;
+    display: block;
+}
+
+.modal-form input {
+    margin-top: 1em;
+    border: 0;
+    width: 50%;
+    height: 50px;
+    border-bottom: 1px solid #333;
+    font-size: 20px;
+
+}
+
+.modal-form button {
+    margin-top: 2em;
+    padding: 10px;
+    border-radius: 10px;
+    float: center;
+    font-size: 20px;
+    color: white;
+    background-color: #047aed;
+}
+
+
+
+
+
+
+
