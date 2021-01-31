@@ -21,6 +21,16 @@ export const createExpense = (content) => {
     }
 }
 
+export const removeExpense = (id) => {
+    return async dispatch => {
+        await expenseService.deleteExpense(id)
+        dispatch({
+            type: 'REMOVE',
+            data: id
+        })
+    }
+}
+
 const expensesRecuder = (state = [], action) => {
     console.log(action.type)
     switch (action.type){
@@ -28,6 +38,8 @@ const expensesRecuder = (state = [], action) => {
             return action.data
         case 'ADD': 
             return state.concat(action.data)
+        case 'REMOVE':
+            return state.filter(expense => expense.id !== action.data)
         default:
             return state
     }

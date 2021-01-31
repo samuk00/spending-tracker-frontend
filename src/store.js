@@ -4,11 +4,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import notificationReducer from './reducers/notificationReducer'
 import expensesRecuder from './reducers/expensesReducer'
 import budgetReducer from './reducers/budgetReducer'
+import sidebarReducer from './reducers/sidebarReducer'
 
 const reducer = combineReducers({
     notification: notificationReducer,
     expenses: expensesRecuder,
-    budget: budgetReducer
+    budget: budgetReducer,
+    sidebar: sidebarReducer
 })
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))

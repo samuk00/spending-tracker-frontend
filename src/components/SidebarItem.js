@@ -5,19 +5,16 @@ import { RiLogoutBoxLine } from "react-icons/ri";
 
 const SidebarItem = ({ handleClick, iconName, buttonText }) => {
 
-    console.log(handleClick)
-
-    const renderIcon = (name) => {
-        console.log(name)
+    const renderIcon = () => {
         switch (iconName) {
             case 'budget':
-                return <FaMoneyCheckAlt style={{color: 'green'}} className="sidebar-icon" />
+                return <FaMoneyCheckAlt style={{ color: 'green' }} className="sidebar-icon" />
             case 'expense':
                 return <FaRegMoneyBillAlt style={{ color: 'green' }} className="sidebar-icon" />
             case 'settings':
-                return <MdSettings className="sidebar-icon" />
+                return <MdSettings style={{ color: 'white' }} className="sidebar-icon" />
             case 'logout':
-                return <RiLogoutBoxLine className="sidebar-icon" />
+                return <RiLogoutBoxLine style={{ color: 'white' }} className="sidebar-icon" />
             default:
                 return null
         }

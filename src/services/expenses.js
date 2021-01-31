@@ -22,10 +22,15 @@ const postExpense = async (newExpense) => {
 
 }
 
+const deleteExpense = async (id) => {
+    await axios.delete(`${baseURL}/${id}`)
+}
+
 const expenseRequests = {
     setToken,
     getExpenses,
     postExpense,
+    deleteExpense
 }
 
 export default expenseRequests

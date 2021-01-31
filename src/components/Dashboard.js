@@ -7,7 +7,7 @@ import InputModal from './InputModal'
 import expenseService from '../services/expenses'
 
 import { initializeBudget } from '../reducers/budgetReducer'
-import { initializeExpenses } from '../reducers/expensesReducer'
+import { initializeExpenses, removeExpense } from '../reducers/expensesReducer'
 
 const Dashboard = () => {
 
@@ -43,6 +43,16 @@ const Dashboard = () => {
         }
     }, [dispatch, user])
 
+    const deleteExpense = (id) => {
+        try{
+            dispatch(removeExpense(id))
+        } catch (exception){
+            console.log('Failed to remove expense')
+        }
+         
+    }
+
+
     return (
         <div className="home-page-container">
             <InputModal
@@ -58,7 +68,9 @@ const Dashboard = () => {
                 setShowModal={setShowModal}
                 setModalType={setModalType}
             />
-            <Expenses expenseList={expenseList} />
+            <Expenses
+                expenseList={expenseList}
+                removeExpense={deleteExpense} />
         </div>
     )
 }

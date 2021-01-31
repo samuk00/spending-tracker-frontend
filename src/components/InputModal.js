@@ -1,5 +1,4 @@
 import React from 'react'
-import { MdNoEncryption } from 'react-icons/md'
 import Modal from 'react-modal'
 import BudgetForm from './BudgetForm'
 import ExpenseForm from './ExpenseForm'
@@ -19,28 +18,26 @@ const ExpenseModal = ({
         : <ExpenseForm setShowModal={setShowModal} createExpense={createExpense} userID={userID} />
 
     return (
-        <div>
-            <Modal
-                style={{
-                    content:
-                    {
-                        top: '20.3%',
-                        left: '15%',
-                        width: '25%',
-                        height: '50%',
-                        backgroundColor: '#1a1a1a',
-                        borderRadius: '0 5% 5% 0'
-                    },
-                    overlay: {
-                        backgroundColor: 'none'
-                    }
-                }}
-                isOpen={showModal}
-                onRequestClose={() => setShowModal(false)}
-            >
-                {modalToShow}
-            </Modal>
-        </div>
+        <Modal
+            style={{
+                content:
+                {
+                    top: '25.3%',
+                    left: '15%',
+                    width: '25%',
+                    height: '50%',
+                    backgroundColor: '#333333',
+                    borderRadius: '0 5% 5% 0'
+                },
+                overlay: {
+                    backgroundColor: 'none'
+                }
+            }}
+            isOpen={showModal}
+            onRequestClose={() => setShowModal(false)}
+        >
+            {modalToShow}
+        </Modal>
     )
 }
 

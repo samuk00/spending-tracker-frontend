@@ -1,14 +1,15 @@
 import React from 'react'
 import ExpenseItem from './ExpenseItem'
 
-const Expenses = ({ expenseList }) => {
+const Expenses = ({ expenseList, removeExpense }) => {
+
 
     return (
         <div className="list-container">
             <div className="inner-container">
                 <h1>Review your expenses</h1>
                 <div>
-                    <table className="review-table">
+                    <table cellSpacing="0" className="review-table">
                         <tbody>
                             <tr>
                                 <th>Euros</th>
@@ -20,10 +21,12 @@ const Expenses = ({ expenseList }) => {
                                 return (
                                     <ExpenseItem
                                         key={index}
+                                        id={item.id}
                                         price={item.price}
                                         category={item.category}
                                         description={item.description}
                                         date={item.date}
+                                        removeExpense={removeExpense}
 
                                     />
                                 )
