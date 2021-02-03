@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Login from './Login'
 import Signup from './Signup'
 import Info from './Info'
+import Navbar from './Navbar'
 import { useHistory } from 'react-router-dom';
 
 
@@ -39,6 +40,7 @@ const Frontpage = () => {
 
     return (
         <div className="front-page-container">
+            <Navbar />
             <div className="main">
                 <Info setView={setView} loading={loading} setLoading={setLoading} />
                 {screenToShow}

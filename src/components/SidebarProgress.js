@@ -32,7 +32,6 @@ const SidebarProgress = ({ progress }) => {
                     backgroundColor: '#3e98c7',
                 })}
             />
-            <h3>{progress}% of the budget used this month</h3>
         </div>
     )
 }

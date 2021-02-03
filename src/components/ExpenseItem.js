@@ -1,5 +1,5 @@
 import React from 'react'
-import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { TiDelete } from "react-icons/ti"
 
 const ExpenseItem = (
     { id,
@@ -10,14 +10,16 @@ const ExpenseItem = (
         removeExpense
     }) => {
 
+    const expenseDate = new Date(date)
+    const formattedDate = `${expenseDate.getDate()}.${expenseDate.getMonth() + 1}.${expenseDate.getFullYear()}`
 
     return (
         <tr className="table-row">
             <td>{price} €</td>
             <td>{category}</td>
-            <td>{date}</td>
+            <td>{formattedDate}</td>
             <td>{description}</td>
-            <BiDotsHorizontalRounded style={{ cursor: 'pointer', color: 'white' }} onClick={() => removeExpense(id)} />
+            <td><TiDelete style={{ cursor: 'pointer', color: 'white' }} onClick={() => removeExpense(id)} /></td>
         </tr>
     )
 }

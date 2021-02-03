@@ -5,7 +5,6 @@ import React from 'react'
 const Notification = () => {
 
     const notification = useSelector(state => state.notification)
-    console.log(notification)
     
     const notificationStyle = { color: "red", fontSize: "16px", textAlign: 'center', marginTop: '16px' }
 

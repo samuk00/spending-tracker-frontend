@@ -5,12 +5,14 @@ import notificationReducer from './reducers/notificationReducer'
 import expensesRecuder from './reducers/expensesReducer'
 import budgetReducer from './reducers/budgetReducer'
 import sidebarReducer from './reducers/sidebarReducer'
+import categoryReducer from './reducers/categoryReducer'
 
 const reducer = combineReducers({
     notification: notificationReducer,
     expenses: expensesRecuder,
     budget: budgetReducer,
-    sidebar: sidebarReducer
+    sidebar: sidebarReducer,
+    categories: categoryReducer
 })
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createExpense } from "../reducers/expensesReducer"
 
-const ExpenseForm = ({ setShowModal }) => {
+const ExpenseForm = ({ setShowModal, categories }) => {
 
     const dispatch = useDispatch()
 
@@ -17,11 +17,14 @@ const ExpenseForm = ({ setShowModal }) => {
             category,
             description
         }
-
         dispatch(createExpense(newExpense))
         setShowModal(false)
-
     }
+
+    const categoryOptions = categories.map(el => ({
+        value: el.category,
+        label: el.category
+    }))
 
     return (
         <div className="modal-form">

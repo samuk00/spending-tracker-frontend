@@ -8,26 +8,23 @@ const ExpenseModal = ({
     showModal,
     setShowModal,
     modalType,
-    handleBudgetChange,
-    createExpense,
-    userID
+    userID,
+    categories
 }) => {
 
     const modalToShow = modalType === 'budget'
-        ? <BudgetForm setShowModal={setShowModal} handleBudgetChange={handleBudgetChange} userID={userID} />
-        : <ExpenseForm setShowModal={setShowModal} createExpense={createExpense} userID={userID} />
+        ? <BudgetForm setShowModal={setShowModal} userID={userID} />
+        : <ExpenseForm setShowModal={setShowModal} categories={categories} />
 
     return (
         <Modal
             style={{
                 content:
                 {
-                    top: '25.3%',
-                    left: '15%',
-                    width: '25%',
+                    margin: 'auto',
+                    width: '50%',
                     height: '50%',
-                    backgroundColor: '#333333',
-                    borderRadius: '0 5% 5% 0'
+                    backgroundColor: '#333333'
                 },
                 overlay: {
                     backgroundColor: 'none'
