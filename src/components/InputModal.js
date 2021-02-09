@@ -21,9 +21,11 @@ const ExpenseModal = ({
             style={{
                 content:
                 {
-                    margin: 'auto',
-                    width: '50%',
-                    height: '50%',
+                    position: 'relative',
+                    left: '15%',
+                    top: '174px',
+                    width: '500px',
+                    height: '500px',
                     backgroundColor: '#333333'
                 },
                 overlay: {

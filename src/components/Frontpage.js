@@ -40,10 +40,12 @@ const Frontpage = () => {
 
     return (
         <div className="front-page-container">
-            <Navbar />
-            <div className="main">
-                <Info setView={setView} loading={loading} setLoading={setLoading} />
-                {screenToShow}
+            <div className="container-content">
+                <Navbar />
+                <div className="card">
+                    <Info setView={setView} loading={loading} setLoading={setLoading} />
+                    {screenToShow}
+                </div>
             </div>
         </div>
     )

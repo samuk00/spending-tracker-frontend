@@ -65,8 +65,8 @@ const Dashboard = () => {
 
     return (
         <div className="container">
-            <Navbar />
             <div className="container-content">
+                <Navbar />
                 <InputModal
                     showModal={showModal}
                     setShowModal={setShowModal}

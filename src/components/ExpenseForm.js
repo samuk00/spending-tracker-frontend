@@ -9,12 +9,22 @@ const ExpenseForm = ({ setShowModal, categories }) => {
     const [price, setPrice] = useState('')
     const [category, setCategory] = useState('')
     const [description, setDescription] = useState('')
+    const [customCategory, setCustomCategory] = useState('')
+
+    console.log(customCategory)
 
     const handleSubmit = (event) => {
         event.preventDefault()
+
+        const categoryToadd = customCategory === ''
+            ? category
+            : customCategory
+
+        console.log(categoryToadd)
+
         const newExpense = {
             price,
-            category,
+            category: categoryToadd,
             description
         }
         dispatch(createExpense(newExpense))
@@ -40,12 +50,22 @@ const ExpenseForm = ({ setShowModal, categories }) => {
                 </div>
                 <div>
                     <label>Category</label>
-                    <input
-                        value={category}
-                        type='text'
-                        placeholder="type your category here"
-                        onChange={({ target }) => setCategory(target.value)}
-                    />
+                    <div className="custom-category">
+                        <div>
+                            <select onChange={({ target }) => setCategory(target.value)}>
+                                <option defaultValue>Choose category</option>
+                                {categoryOptions.map((cat, index) => <option key={index}>{cat.value}</option>)}
+                            </select>
+                        </div>
+                        <div className="custom-category">
+                            <input
+                                value={customCategory}
+                                placeholder="type a new category"
+                                onChange={({ target }) => setCustomCategory(target.value)}
+                            />
+
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <label>Description</label>
@@ -60,7 +80,7 @@ const ExpenseForm = ({ setShowModal, categories }) => {
                     Submit
                 </button>
             </form>
-        </div>
+        </div >
     )
 }
 
